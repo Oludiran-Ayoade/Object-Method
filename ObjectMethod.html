@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Method</title>
+</head>
+<style>
+   th {
+    padding-left: 30px;
+    padding-top: 20px;
+   }
+   td {
+    padding-left: 20px;
+   }
+   table, th , td {
+    border: 1px solid black;
+   }
+</style>
+<body>
+    <table>
+        <tr>
+            <th>Head</th>
+            <th>E-mail</th>
+            <th>Status</th>
+        </tr>   
+
+        <tr >
+            <td id="data"></td>
+            <td id="data2"></td>
+            <td id="data3"></td>
+            
+        </tr>
+    </table>
+    <button onclick="allUsers()">All Users</button>
+    <button onclick="paid()">Paid</button>
+    <button onclick="unpaid()">Unpaid</button>
+    
+</body>
+
+<script>
+
+let users = [
+
+{
+    name: "Daniel",
+    password: "123456",
+    gender: "Male",
+    email: "daniel@gmail.com",
+    status: "paid",
+},
+{
+    name: "Samuel",
+    password: "12345",
+    gender: "Male",
+    email: "saniel@gmail.com",
+    status: "unpaid",
+},
+{
+    name: "Micheal",
+    password: "1234",
+    gender: "Male",
+    email: "maniel@gmail.com",
+    status: "unpaid",
+},
+{
+    name: "Gabriel",
+    password: "123",
+    gender: "Male",
+    email: "ganiel@gmail.com",
+    status: "paid",
+},
+{
+    name: "Babel",
+    password: "12",
+    gender: "Female",
+    email: "baniel@gmail.com",
+    status: "unpaid",
+},
+
+]
+
+//All Users
+const allUsers = () => {
+    data.innerHTML = "";
+    data2.innerHTML = "";
+    data3.innerHTML = "";
+
+const user_users = users.map((item)=> {
+     data.innerHTML += `<td>${item.name}</td> <br />` 
+     data2.innerHTML += `<td>${item.email}</td> <br />`
+     data3.innerHTML += `<td>${item.status}</td> <br />`
+})
+};
+
+// Filter paid
+const paid = () => {
+    data.innerHTML = "";
+    data2.innerHTML = "";
+    data3.innerHTML = "";
+
+
+const user_u = users.filter((item) => {
+  return item.status === "paid"   
+})
+user_u.forEach((user) => {
+    data.innerHTML += `<td>${user.name}</td> <br />`;
+    data2.innerHTML += `<td>${user.email}</td> <br />`;
+    data3.innerHTML += `<td>${user.status}</td> <br />`;
+    // data.innerHTML += ` <br />`;
+  });
+}
+
+
+// Filter unpaid
+const unpaid = () => {
+    data.innerHTML = "";
+    data2.innerHTML = "";
+    data3.innerHTML = "";
+
+
+const user_ua = users.filter((item) => {
+  return item.status === "unpaid"   
+})
+user_ua.forEach((user) => {
+    data.innerHTML += `<td>${user.name}</td> <br />`;
+    data2.innerHTML += `<td>${user.email}</td> <br />`;
+    data3.innerHTML += `<td>${user.status}</td> <br />`;
+    // data.innerHTML += ` <br />`;
+  });
+}
+
+// Assignment
+// create an array of questions and options
+</script>
+</html>
